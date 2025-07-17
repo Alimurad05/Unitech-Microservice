@@ -1,26 +1,38 @@
-server:
-  port: 8084
-
 spring:
+  application:
+    name: account-server
+
   datasource:
-    url: jdbc:postgresql://localhost:5434/account_db
-    username: alimurad
-    password: alimurad05
+    url: jdbc:postgresql://localhost:5433/account_db
+    username: tural
+    password: tural05
     driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  redis:
+    host: localhost
+    port: 6379
+
   rabbitmq:
     host: localhost
     port: 5672
     username: guest
     password: guest
-  redis:
-    host: localhost
-    port: 6379
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+server:
+  port: 8084
