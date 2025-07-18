@@ -4,8 +4,8 @@ server:
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5434/transfer_db
-    username: postgres
-    password: your_password
+    username: alimurad
+    password: alimurad05
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -17,6 +17,6 @@ spring:
 
   rabbitmq:
     host: localhost
-    port: 5672
+    port: 5674
     username: guest
     password: guest
